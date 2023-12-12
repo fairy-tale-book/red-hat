@@ -502,7 +502,7 @@ const brands = [
 ];
 let correct = 0;
 let total = 0;
-const totalDraggableItems = 4;
+const totalDraggableItems = 5;
 const totalMatchingPairs = 4; // Should be <= totalDraggableItems
 
 const scoreSection = document.querySelector(".score");
