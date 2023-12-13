@@ -502,7 +502,7 @@ const brands = [
 ];
 let correct = 0;
 let total = 0;
-const totalDraggableItems = 5;
+const totalDraggableItems = 4;
 const totalMatchingPairs = 4; // Should be <= totalDraggableItems
 
 const scoreSection = document.querySelector(".score");
@@ -639,13 +639,13 @@ function playAgainBtnClick() {
   }, 500);
 }
 
-// Auxiliary functions
+// Auxiliary functions 辅助方法
 function generateRandomItemsArray(n, originalArray) {
   let res = [];
   let clonedArray = [...originalArray];
-  if(n>clonedArray.length) n=clonedArray.length;
-  for(let i=1; i<=n; i++) {
-    const randomIndex = Math.floor(Math.random()*clonedArray.length);
+  if(n > clonedArray.length) n = clonedArray.length;
+  for(let i = 1; i <= n; i++) {
+    const randomIndex = Math.floor(Math.random() * clonedArray.length);
     res.push(clonedArray[randomIndex]);
     clonedArray.splice(randomIndex, 1);
   }
