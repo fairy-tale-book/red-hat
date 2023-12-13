@@ -1,8 +1,6 @@
-# Quarkc Wave news
+# Red hat
 
 ## Develop & Installation
-
-<!-- <img src="./public/demo.png"> -->
 
 开发，构建和运行。
 

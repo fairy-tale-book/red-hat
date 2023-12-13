@@ -519,18 +519,22 @@ initiateGame();
 
 function initiateGame() {
   const randomDraggableBrands = generateRandomItemsArray(totalDraggableItems, brands);
-  const randomDroppableBrands = totalMatchingPairs<totalDraggableItems ? generateRandomItemsArray(totalMatchingPairs, randomDraggableBrands) : randomDraggableBrands;
-  const alphabeticallySortedRandomDroppableBrands = [...randomDroppableBrands].sort((a,b) => a.brandName.toLowerCase().localeCompare(b.brandName.toLowerCase()));
+
+  const randomDroppableBrands = totalMatchingPairs < totalDraggableItems ?
+    generateRandomItemsArray(totalMatchingPairs, randomDraggableBrands) : randomDraggableBrands;
+
+  const alphabeticallySortedRandomDroppableBrands =
+    [...randomDroppableBrands].sort((a, b) => a.brandName.toLowerCase().localeCompare(b.brandName.toLowerCase()));
 
   // Create "draggable-items" and append to DOM
-  for(let i=0; i<randomDraggableBrands.length; i++) {
+  for (let i = 0; i < randomDraggableBrands.length; i++) {
     draggableItems.insertAdjacentHTML("beforeend", `
       <i class="fab fa-${randomDraggableBrands[i].iconName} draggable" draggable="true" style="color: ${randomDraggableBrands[i].color};" id="${randomDraggableBrands[i].iconName}"></i>
     `);
   }
 
   // Create "matching-pairs" and append to DOM
-  for(let i=0; i<alphabeticallySortedRandomDroppableBrands.length; i++) {
+  for (let i = 0; i < alphabeticallySortedRandomDroppableBrands.length; i++) {
     // <span class="label">${alphabeticallySortedRandomDroppableBrands[i].brandName}</span>
     matchingPairs.insertAdjacentHTML("beforeend", `
       <div class="matching-pair">
@@ -569,19 +573,19 @@ function dragStart(event) {
 //Events fired on the drop target
 
 function dragEnter(event) {
-  if(event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
+  if (event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
     event.target.classList.add("droppable-hover");
   }
 }
 
 function dragOver(event) {
-  if(event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
+  if (event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
     event.preventDefault();
   }
 }
 
 function dragLeave(event) {
-  if(event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
+  if (event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
     event.target.classList.remove("droppable-hover");
   }
 }
@@ -591,9 +595,9 @@ function drop(event) {
   event.target.classList.remove("droppable-hover");
   const draggableElementBrand = event.dataTransfer.getData("text");
   const droppableElementBrand = event.target.getAttribute("data-brand");
-  const isCorrectMatching = draggableElementBrand===droppableElementBrand;
+  const isCorrectMatching = draggableElementBrand === droppableElementBrand;
   total++;
-  if(isCorrectMatching) {
+  if (isCorrectMatching) {
     const draggableElement = document.getElementById(draggableElementBrand);
     event.target.classList.add("dropped");
     draggableElement.classList.add("dragged");
@@ -607,7 +611,7 @@ function drop(event) {
     totalSpan.textContent = total;
     scoreSection.style.opacity = 1;
   }, 200);
-  if(correct===Math.min(totalMatchingPairs, totalDraggableItems)) { // Game Over!!
+  if (correct === Math.min(totalMatchingPairs, totalDraggableItems)) { // Game Over!!
     playAgainBtn.style.display = "block";
     setTimeout(() => {
       playAgainBtn.classList.add("play-again-btn-entrance");
@@ -643,8 +647,8 @@ function playAgainBtnClick() {
 function generateRandomItemsArray(n, originalArray) {
   let res = [];
   let clonedArray = [...originalArray];
-  if(n > clonedArray.length) n = clonedArray.length;
-  for(let i = 1; i <= n; i++) {
+  if (n > clonedArray.length) n = clonedArray.length;
+  for (let i = 1; i <= n; i++) {
     const randomIndex = Math.floor(Math.random() * clonedArray.length);
     res.push(clonedArray[randomIndex]);
     clonedArray.splice(randomIndex, 1);
