@@ -6,28 +6,184 @@
 		<title>小红帽</title>
 
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'> -->
     <!-- <link rel="stylesheet" href="./src/reset.css"> -->
     
+    
 
-		<script type="module" crossorigin src="./assets/main-2390eddd.js"></script>
-		<link rel="stylesheet" href="./assets/index-5d9ee879.css">
+    <script src="./src/swiper.js"></script>
+		<link rel="stylesheet" href="./assets/index-3b6c2ff1.css">
 	</head>
 	<body>
 
+    <header>
+      <h2>选主题</h2>
+    </header>
+
+    <!-- 布局参考：https://www.swiper.com.cn/demo/slides-scale.html -->
 
 
-    <section class="score">
-      <span class="correct">0</span>/<span class="total">0</span>
-      <button id="play-again-btn">Play again</button>
-    </section>
+    <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+      <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1166px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="7" style="width: 358.667px; margin-right: 30px;">Slide 8</div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="8" style="width: 358.667px; margin-right: 30px;">Slide 9</div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="9" style="width: 358.667px; margin-right: 30px;">Slide 10</div>
+        <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" style="width: 358.667px; margin-right: 30px;">
+          <a href="./main.html">
+            <img src="./assets/theme-item1-0f2d5f42.png" alt="">
+          </a>
+        </div>
+        <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1" style="width: 358.667px; margin-right: 30px;">
+          <a href="./main.html">
+            <img src="./assets/theme-item1-0f2d5f42.png" alt="">
+          </a>
+        </div>
+        <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" style="width: 358.667px; margin-right: 30px;">
+          <a href="./main.html">
+            <img src="./assets/theme-item1-0f2d5f42.png" alt="">
+          </a>
+        </div>
+        <div class="swiper-slide" data-swiper-slide-index="3" style="width: 358.667px; margin-right: 30px;">
+          <a href="./main.html">
+            <img src="./assets/theme-item1-0f2d5f42.png" alt="">
+          </a>
+        </div>
+        <div class="swiper-slide" data-swiper-slide-index="4" style="width: 358.667px; margin-right: 30px;">
+          <a href="./main.html">
+            <img src="./assets/theme-item1-0f2d5f42.png" alt="">
+          </a>
+        </div>
+        <div class="swiper-slide" data-swiper-slide-index="5" style="width: 358.667px; margin-right: 30px;">
+          <a href="./main.html">
+            <img src="./assets/theme-item1-0f2d5f42.png" alt="">
+          </a>
+        </div>
+        <div class="swiper-slide" data-swiper-slide-index="6" style="width: 358.667px; margin-right: 30px;">
+          <a href="./main.html">
+            <img src="./assets/theme-item1-0f2d5f42.png" alt="">
+          </a>
+        </div>
+        <div class="swiper-slide" data-swiper-slide-index="7" style="width: 358.667px; margin-right: 30px;">
+          <a href="./main.html">
+            <img src="./assets/theme-item1-0f2d5f42.png" alt="">
+          </a>
+        </div>
+        <div class="swiper-slide" data-swiper-slide-index="8" style="width: 358.667px; margin-right: 30px;">
+          <a href="./main.html">
+            <img src="./assets/theme-item1-0f2d5f42.png" alt="">
+          </a>
+        </div>
+        <div class="swiper-slide" data-swiper-slide-index="9" style="width: 358.667px; margin-right: 30px;">
+          <a href="./main.html">
+            <img src="./assets/theme-item1-0f2d5f42.png" alt="">
+          </a>
+        </div>
 
-    <!-- 模块 -->
-    <section class="draggable-items"></section>
-    <!-- 中央拼图 -->
-    <section class="matching-pairs"></section>
+        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" style="width: 358.667px; margin-right: 30px;">Slide 1</div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="1" style="width: 358.667px; margin-right: 30px;">Slide 2</div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" style="width: 358.667px; margin-right: 30px;">Slide 3</div></div>
 
+
+        <!-- Add Pagination -->
+      <!-- <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 7"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 8"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 9"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 10"></span></div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div> -->
+
+
+    <script>
+
+    var swiper = new Swiper('.swiper-container', {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                  centeredSlides: true,
+                  loop: true,
+                  pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                  },
+                });
+
+    </script>
+
+    <!-- <div class="container">
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+      <div class="theme-item">
+        <a href="./main.html">
+          <img src="./src/theme-item1.png" alt="">
+        </a>
+      </div>
+    </div> -->
 
 	</body>
-  
 </html>
