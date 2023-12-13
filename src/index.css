@@ -51,6 +51,7 @@ body {
   /* background-color: #eee; */
   color: #111;
   background: #99d2f0;
+  background: #72bbd1;
 }
 
 header {
@@ -74,4 +75,9 @@ header {
 }
 img {
   width: 100%;
+}
+
+a {
+  color: #ffe400;
+  font-size: 2rem;
 }
