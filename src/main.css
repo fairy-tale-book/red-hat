@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +12,26 @@ body {
   /* background-color: #eee; */
   color: #111;
   background: #a5db60;
+  /* 16px * 0.625 = 10px;  */
+  font-size: 62.5%;
+
+  --green: #a5db60;
+  --pair: #bfe98a;
 }
 
+.back-btn {
+  width:  4rem;
+  height: 4rem;
+  margin: 2rem;
+}
+header a{
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+}
+header img {
+  width: 100%;
+}
 .score {
   font-family: monospace;
   text-align: center;
@@ -86,6 +106,7 @@ body {
   width: 10rem;
   display: flex;
   justify-content: space-between;
+  border: 2px solid var(--green);
 }
 .matching-pair span {
   height: 100%;
@@ -125,3 +146,88 @@ body {
   #play-again-btn { top: -0.4rem; }
   #play-again-btn.play-again-btn-entrance { transform: translateX(7rem); }
 }
+
+
+.gen-story {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+}
+
+.gen-story a{
+  width: 8rem;
+  height: 8rem;
+  overflow: hidden;
+  display: flex;
+}
+
+
+
+/* 拼图 */
+.pair-1 {
+  font-size: 12px;
+   /* width: 6em;
+   height: 6em;
+   margin: 50px; */
+   position: relative;
+   -webkit-border-radius: .5em;
+   -moz-border-radius: .5em;
+   border-radius: .5em;
+ }
+
+ .pair-1,
+ .pair-1 span {
+  background-color: var(--pair);
+ }
+
+ .pair-1 .t {
+  width:4rem;
+   height:4rem;
+   position: absolute;
+   top: -1.5em;
+   left:4rem;
+   -webkit-border-radius: 4em;
+   -moz-border-radius: 4em;
+   border-radius: 4em;
+ }
+
+ .pair-1 .r {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 3rem;
+  right: -2rem;
+   border-radius: 4em;
+   z-index: 1;
+ }
+
+ .pair-1 .b {
+  width: 4rem;
+   height: 4rem;
+   position: absolute;
+   bottom: -2rem;
+   left: 3rem;
+   -webkit-border-radius: 4em;
+   -moz-border-radius: 4em;
+   border-radius: 4em;
+   background-color: var(--green);
+ }
+
+ .pair-1 .l {
+  width: 4rem;
+   height: 4rem;
+   position: absolute;
+   top: 2.5em;
+   left: -.4em;
+   -webkit-border-radius: 4em;
+   -moz-border-radius: 4em;
+   border-radius: 4em;
+   background-color: var(--green);
+ }
+
+ .pair-2{
+  background-color: var(--pair);
+ }
+ .pair-2 b {
+  background: var(--pair);
+ }
