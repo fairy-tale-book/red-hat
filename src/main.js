@@ -2,44 +2,36 @@
 const brands = [
   {
     iconName: 'ele1',
-    eleName: 'Wix.com',
-    color: '#333333',
     img: 'ele1'
   },
   {
     iconName: 'ele2',
-    eleName: 'WordPress',
-    color: '#21759b',
     img: 'ele2'
   },
   {
     iconName: 'ele3',
-    eleName: 'Xbox',
-    color: '#52b043',
     img: 'ele3'
   },
   {
     iconName: 'ele4',
-    eleName: 'Yahoo!',
-    color: '#410093',
     img: 'ele4'
   },
   {
     iconName: 'ele5',
-    eleName: 'YouTube',
-    color: '#ff0000',
     img: 'ele5'
   },
   {
     iconName: 'ele6',
-    eleName: 'YouTube',
-    color: '#ff0000',
     img: 'ele6'
+  },
+  {
+    iconName: 'ele1',
+    img: 'eleeeee'
   },
 ];
 let correct = 0;
 let total = 0;
-const totalDraggableItems = 4;
+const totalDraggableItems = 9;
 const totalMatchingPairs = 4; // Should be <= totalDraggableItems
 
 // const scoreSection = document.querySelector('.score');
@@ -57,35 +49,20 @@ initiateGame();
 function initiateGame() {
   const randomDraggableBrands = generateRandomItemsArray(totalDraggableItems, brands);
 
-  const randomDroppableBrands = totalMatchingPairs < totalDraggableItems
-    ? generateRandomItemsArray(totalMatchingPairs, randomDraggableBrands) : randomDraggableBrands;
-
-  const alphabeticallySortedRandomDroppableBrands = [...randomDroppableBrands].sort((a, b) => a.eleName.toLowerCase().localeCompare(b.eleName.toLowerCase()));
-
-
-  console.log(alphabeticallySortedRandomDroppableBrands, 111);
-
-  // <i class="fab fa-${randomDraggableBrands[i].iconName} draggable"
-  //     draggable="true"
-  //     style="color: ${randomDraggableBrands[i].color};"
-  //     id="${randomDraggableBrands[i].iconName}"></i>
-  // Create "draggable-items" and append to DOM
-  // for (let i = 0; i < randomDraggableBrands.length; i++) {
   for (const item of randomDraggableBrands) {
-    console.log(item, 11);
     draggableItems.insertAdjacentHTML('beforeend', `
       ${item.iconName}
-      <img class="draggable" id="${item.iconName}" draggable src="../images/${item.img}.png" />
+      <img class="draggable" data-img="${item.img}" id="${item.img}" draggable src="../images/${item.img}.png" />
     `);
   }
 
-
   // Create "matching-pairs" and append to DOM
-  for (let i = 0; i < alphabeticallySortedRandomDroppableBrands.length; i++) {
+  for (let i = 0; i < totalMatchingPairs; i++) {
     matchingPairs.insertAdjacentHTML('beforeend', `
       <div class="matching-pair pair-${i+1} droppable"
-        data-brand="${alphabeticallySortedRandomDroppableBrands[i].iconName}">
-        ${alphabeticallySortedRandomDroppableBrands[i].iconName}
+        data-brand="${brands[i].iconName}"
+        >
+        ${brands[i].iconName}
       </div>
     `);
   }
@@ -145,72 +122,44 @@ function drop(event) {
   const draggableElementBrand = event.dataTransfer.getData('text');
   const droppableElementBrand = event.target.getAttribute('data-brand');
 
+  const target = brands.filter(item => item.img === draggableElementBrand)
+
   // 匹配
-  const isCorrectMatching = draggableElementBrand === droppableElementBrand;
+  const isCorrectMatching = target[0].iconName === droppableElementBrand;
   total++;
 
 
-  console.log(draggableElementBrand, droppableElementBrand);
+  console.log(target[0], droppableElementBrand);
+
+  // console.log(draggableElementBrand, droppableElementBrand, target);
+
   if (isCorrectMatching) {
     const draggableElement = document.getElementById(draggableElementBrand);
 
     event.target.classList.add('dropped');
-    event.target.classList.add();
+    event.target.classList.add('data-img');
 
     draggableElement.classList.add('dragged');
     draggableElement.setAttribute('draggable', 'false');
-    // console.log(draggableElementBrand, 22);
+    console.log(draggableElement.getAttribute('data-img'), 22);
 
-    const target = brands.map(item => item.eleName === draggableElementBrand)
-    console.log(target, 1133);
-    // <i class="fab fa-${draggableElementBrand}" style="color: ${draggableElement.style.color};"></i>
+    // data-img="${item.img}"
+
     event.target.innerHTML = `
-      <img src="../images/${draggableElementBrand}.png" />
+      <img src="../images/${target[0].img}.png" />
     `;
     correct++;
 
-    console.log('success', correct);
+    console.log('success', correct, total);
+
+    if(correct === totalMatchingPairs) {
+      const genStoryELe = document.getElementsByName('gen-story-btn');
+      genStoryELe.style['opacity'] = 1;
+      genStoryELe.style['cursor'] = 'pointer';
+    }
   }
 
-  // scoreSection.style.opacity = 0;
-
-  // setTimeout(() => {
-  //   correctSpan.textContent = correct;
-  //   totalSpan.textContent = total;
-  //   scoreSection.style.opacity = 1;
-  // }, 200);
-
-  // if (correct === Math.min(totalMatchingPairs, totalDraggableItems)) { // Game Over!!
-  //   playAgainBtn.style.display = 'block';
-  //   setTimeout(() => {
-  //     playAgainBtn.classList.add('play-again-btn-entrance');
-  //   }, 200);
-  // }
 }
-
-// Other Event Listeners
-// playAgainBtn.addEventListener('click', playAgainBtnClick);
-// function playAgainBtnClick() {
-//   playAgainBtn.classList.remove('play-again-btn-entrance');
-//   correct = 0;
-//   total = 0;
-//   draggableItems.style.opacity = 0;
-//   matchingPairs.style.opacity = 0;
-//   // setTimeout(() => {
-//   //   scoreSection.style.opacity = 0;
-//   // }, 100);
-//   setTimeout(() => {
-//     playAgainBtn.style.display = 'none';
-//     while (draggableItems.firstChild) draggableItems.removeChild(draggableItems.firstChild);
-//     while (matchingPairs.firstChild) matchingPairs.removeChild(matchingPairs.firstChild);
-//     initiateGame();
-//     // correctSpan.textContent = correct;
-//     // totalSpan.textContent = total;
-//     draggableItems.style.opacity = 1;
-//     matchingPairs.style.opacity = 1;
-//     // scoreSection.style.opacity = 1;
-//   }, 500);
-// }
 
 // Auxiliary functions 辅助方法
 function generateRandomItemsArray(n, originalArray) {
