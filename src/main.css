@@ -93,20 +93,36 @@ header img {
 .draggable:hover {
   opacity: 0.5;
 }
+
 .matching-pairs {
   transition: opacity 0.5s;
-
   display: grid;
   grid-template-areas: "a a";
   justify-content: center;
+  position: relative;
 
+  width: 20rem;
+  height: 20rem;
+}
+
+.matching-pairs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .matching-pair {
-  height: 10rem;
-  width: 10rem;
-  display: flex;
+  /* height: 10rem;
+  width: 10rem; */
+  /* display: flex;
   justify-content: space-between;
-  border: 2px solid var(--green);
+  border: 2px solid var(--green); */
+
+  width: 320px;
+  height: 320px;
+  position: absolute;
+}
+.matching-pair img {
+  width: 100%;
 }
 .matching-pair span {
   height: 100%;
@@ -116,18 +132,58 @@ header img {
   text-align: center;
   user-select: none;
 }
+
+.pair-1 img,
+.pair-4 img {
+  height: 100%;
+  width: auto;
+}
+
+.pair-1 {
+  left: 5px;
+  top: 0;
+  background: url(/images/pair1.png) no-repeat;
+  background-size: 100%;
+  width: 194px;
+}
+.pair-2 {
+  right: 0;
+  background: url(/images/pair2.png) no-repeat;
+  background-size: 100%;
+  height: 200px;
+  width: 160px;
+}
+.pair-3 {
+  bottom: -115px;
+  left: 5px;
+  background: url(../images/pair3.png) no-repeat;
+  background-size: 100%;
+  height: 100%;
+  width: 10rem;
+}
+.pair-4 {
+  background: url(/images/pair4.png) no-repeat;
+  background-size: 100%;
+  height: 200px;
+  width: 197px;
+  right: 0;
+  bottom: -32px;
+}
+
+
 .label {
   width: 15rem;
 }
 .droppable {
-  width: 100%;
-  background-color: #fff;
-  border: 3px dashed #111;
+  /* width: 100%; */
+  /* background-color: #fff; */
+  /* border: 3px dashed #111; */
   transition: 0.2s;
 }
 .droppable-hover {
-  background-color: #bee3f0;
+  /* background-color: #bee3f0; */
   transform: scale(1.1);
+  z-index: 999;
 }
 .dropped {
   border-style: solid;
@@ -160,74 +216,3 @@ header img {
   overflow: hidden;
   display: flex;
 }
-
-
-
-/* 拼图 */
-.pair-1 {
-  font-size: 12px;
-   /* width: 6em;
-   height: 6em;
-   margin: 50px; */
-   position: relative;
-   -webkit-border-radius: .5em;
-   -moz-border-radius: .5em;
-   border-radius: .5em;
- }
-
- .pair-1,
- .pair-1 span {
-  background-color: var(--pair);
- }
-
- .pair-1 .t {
-  width:4rem;
-   height:4rem;
-   position: absolute;
-   top: -1.5em;
-   left:4rem;
-   -webkit-border-radius: 4em;
-   -moz-border-radius: 4em;
-   border-radius: 4em;
- }
-
- .pair-1 .r {
-  width: 4rem;
-  height: 4rem;
-  position: absolute;
-  top: 3rem;
-  right: -2rem;
-   border-radius: 4em;
-   z-index: 1;
- }
-
- .pair-1 .b {
-  width: 4rem;
-   height: 4rem;
-   position: absolute;
-   bottom: -2rem;
-   left: 3rem;
-   -webkit-border-radius: 4em;
-   -moz-border-radius: 4em;
-   border-radius: 4em;
-   background-color: var(--green);
- }
-
- .pair-1 .l {
-  width: 4rem;
-   height: 4rem;
-   position: absolute;
-   top: 2.5em;
-   left: -.4em;
-   -webkit-border-radius: 4em;
-   -moz-border-radius: 4em;
-   border-radius: 4em;
-   background-color: var(--green);
- }
-
- .pair-2{
-  background-color: var(--pair);
- }
- .pair-2 b {
-  background: var(--pair);
- }
