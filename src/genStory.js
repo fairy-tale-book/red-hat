@@ -25,6 +25,11 @@ async function postData(url = "", data = {}) {
   return response.json(); // parses JSON response into native JavaScript objects
 }
 
+const loadingEle = document.getElementById('loading')
+
 postData(genUrl, params).then((data) => {
   console.log(data); // JSON data parsed by `data.json()` call
-});
+}).catch(err=> {
+  console.log(err, 11);
+  loadingEle.style.display = 'none';
+})
