@@ -1,0 +1,16 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+  font-size: 62.5%;
+}
+
+
+body {
+  --green: #a5db60;
+  --pair: #bfe98a;
+
+  font-size: 62.5%!important;
+  color: #111;
+  background: var(--green);
+}
