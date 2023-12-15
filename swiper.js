@@ -1,70 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-
-		<title>小红帽</title>
-
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'> -->
-    <!-- <link rel="stylesheet" href="./src/reset.css"> -->
-    <link rel="stylesheet" href="./src/swiper.min.css">
-    <link rel="stylesheet" href="./src/index.css">
-	</head>
-	<body>
-
-    <header>
-      <h2>选主题</h2>
-    </header>
-
-    <!-- 布局参考：https://www.swiper.com.cn/demo/slides-scale.html -->
-
-
-    <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
-      <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1166px, 0px, 0px);">
-        <!-- <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="7" style="width: 358.667px; margin-right: 30px;">Slide 8</div>
-        <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="8" style="width: 358.667px; margin-right: 30px;">
-        Slide 9</div>
-        <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="9" style="width: 358.667px; margin-right: 30px;">
-          Slide 10</div> -->
-        <div class="swiper-slide" data-swiper-slide-index="4" style="width: 358.667px; margin-right: 30px;">
-          <a href="./main.html">
-            <img src="./images/zs.png" alt="">
-          </a>
-        </div>
-        <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" style="width: 358.667px; margin-right: 30px;">
-          <a href="./main.html">
-            <img src="./images/zztr.png" alt="">
-          </a>
-        </div>
-        <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1" style="width: 358.667px; margin-right: 30px;">
-          <a href="./main.html">
-            <img src="./images/qr.png" alt="">
-          </a>
-        </div>
-        <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" style="width: 358.667px; margin-right: 30px;">
-          <a href="./main.html">
-            <img src="./images/qxs.png" alt="">
-          </a>
-        </div>
-        <div class="swiper-slide" data-swiper-slide-index="3" style="width: 358.667px; margin-right: 30px;">
-          <a href="./main.html">
-            <img src="./images/dxr.png" alt="">
-          </a>
-        </div>
-        <div class="swiper-slide" data-swiper-slide-index="3" style="width: 358.667px; margin-right: 30px;">
-          <a href="./main.html">
-            <img src="./images/zcjg.png" alt="">
-          </a>
-        </div>
-        <!-- <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" style="width: 358.667px; margin-right: 30px;">Slide 1</div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="1" style="width: 358.667px; margin-right: 30px;">Slide 2</div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" style="width: 358.667px; margin-right: 30px;">Slide 3</div></div> -->
-      </div>
-
-
-
-
-      <script>
-        /**
+/**
  * Swiper 5.4.5
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
@@ -5462,19 +5396,4 @@
   j
 }
 ));
-
-      </script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-          slidesPerView: 3,
-          spaceBetween: 30,
-          centeredSlides: true,
-          loop: true,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-        });
-    </script>
-	</body>
-</html>
+//# sourceMappingURL=swiper.min.js.map
