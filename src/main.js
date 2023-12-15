@@ -1,37 +1,37 @@
 /* eslint-disable no-use-before-define */
 const brands = [
   {
-    iconName: 'wix',
+    iconName: 'ele1',
     eleName: 'Wix.com',
     color: '#333333',
     img: 'ele1'
   },
   {
-    iconName: 'wordpress',
+    iconName: 'ele2',
     eleName: 'WordPress',
     color: '#21759b',
     img: 'ele2'
   },
   {
-    iconName: 'xbox',
+    iconName: 'ele3',
     eleName: 'Xbox',
     color: '#52b043',
     img: 'ele3'
   },
   {
-    iconName: 'yahoo',
+    iconName: 'ele4',
     eleName: 'Yahoo!',
     color: '#410093',
     img: 'ele4'
   },
   {
-    iconName: 'youtube',
+    iconName: 'ele5',
     eleName: 'YouTube',
     color: '#ff0000',
     img: 'ele5'
   },
   {
-    iconName: 'youtube',
+    iconName: 'ele6',
     eleName: 'YouTube',
     color: '#ff0000',
     img: 'ele6'
@@ -39,7 +39,7 @@ const brands = [
 ];
 let correct = 0;
 let total = 0;
-const totalDraggableItems = 9;
+const totalDraggableItems = 4;
 const totalMatchingPairs = 4; // Should be <= totalDraggableItems
 
 // const scoreSection = document.querySelector('.score');
@@ -74,6 +74,7 @@ function initiateGame() {
   for (const item of randomDraggableBrands) {
     console.log(item, 11);
     draggableItems.insertAdjacentHTML('beforeend', `
+      ${item.iconName}
       <img class="draggable" id="${item.iconName}" draggable src="../images/${item.img}.png" />
     `);
   }
@@ -84,6 +85,7 @@ function initiateGame() {
     matchingPairs.insertAdjacentHTML('beforeend', `
       <div class="matching-pair pair-${i+1} droppable"
         data-brand="${alphabeticallySortedRandomDroppableBrands[i].iconName}">
+        ${alphabeticallySortedRandomDroppableBrands[i].iconName}
       </div>
     `);
   }
@@ -116,19 +118,22 @@ function dragStart(event) {
 // Events fired on the drop target
 
 function dragEnter(event) {
-  if (event.target.classList && event.target.classList.contains('droppable') && !event.target.classList.contains('dropped')) {
+  if (event.target.classList && event.target.classList.contains('droppable') &&
+  !event.target.classList.contains('dropped')) {
     event.target.classList.add('droppable-hover');
   }
 }
 
 function dragOver(event) {
-  if (event.target.classList && event.target.classList.contains('droppable') && !event.target.classList.contains('dropped')) {
+  if (event.target.classList && event.target.classList.contains('droppable') &&
+  !event.target.classList.contains('dropped')) {
     event.preventDefault();
   }
 }
 
 function dragLeave(event) {
-  if (event.target.classList && event.target.classList.contains('droppable') && !event.target.classList.contains('dropped')) {
+  if (event.target.classList && event.target.classList.contains('droppable') &&
+  !event.target.classList.contains('dropped')) {
     event.target.classList.remove('droppable-hover');
   }
 }
@@ -150,16 +155,17 @@ function drop(event) {
     const draggableElement = document.getElementById(draggableElementBrand);
 
     event.target.classList.add('dropped');
+    event.target.classList.add();
 
     draggableElement.classList.add('dragged');
     draggableElement.setAttribute('draggable', 'false');
     // console.log(draggableElementBrand, 22);
 
-    const target = brands.filter(item => item.eleName === draggableElementBrand)
+    const target = brands.map(item => item.eleName === draggableElementBrand)
     console.log(target, 1133);
     // <i class="fab fa-${draggableElementBrand}" style="color: ${draggableElement.style.color};"></i>
     event.target.innerHTML = `
-      <img src="" />
+      <img src="../images/${draggableElementBrand}.png" />
     `;
     correct++;
 

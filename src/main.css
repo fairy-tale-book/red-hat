@@ -8,15 +8,16 @@
   box-sizing: border-box;
 }
 body {
+  --green: #a5db60;
+  --pair: #bfe98a;
+
+
   font-family: 'Montserrat', sans-serif;
   /* background-color: #eee; */
   color: #111;
-  background: #a5db60;
+  background: var(--green);
   /* 16px * 0.625 = 10px;  */
   font-size: 62.5%;
-
-  --green: #a5db60;
-  --pair: #bfe98a;
 }
 
 .back-btn {
@@ -185,9 +186,12 @@ header img {
   transform: scale(1.1);
   z-index: 999;
 }
+
 .dropped {
-  border-style: solid;
+  /* border-style: solid; */
 }
+
+
 .dragged {
   user-select: none;
   opacity: 0.1;
