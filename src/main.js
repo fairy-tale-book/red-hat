@@ -26,7 +26,7 @@ const brands = [
   },
   {
     iconName: 'ele1',
-    img: 'eleeeee'
+    img: 'elee'
   },
 ];
 let correct = 0;
@@ -153,7 +153,7 @@ function drop(event) {
     console.log('success', correct, total);
 
     if(correct === totalMatchingPairs) {
-      const genStoryELe = document.getElementsByName('gen-story-btn');
+      const genStoryELe = document.getElementById('gen-story-btn');
       genStoryELe.style['opacity'] = 1;
       genStoryELe.style['cursor'] = 'pointer';
     }

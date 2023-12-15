@@ -81,7 +81,7 @@ header img {
 }
 .draggable {
   height: 5rem;
-  width: 5rem;
+  /* width: 5rem; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -213,6 +213,7 @@ header img {
   height: 8rem;
   overflow: hidden;
   display: flex;
-  cursor: not-allowed;
-  opacity: .3;
+  /* cursor: not-allowed; */
+  opacity: 0;
+  /* transform: scale(.8); */
 }
