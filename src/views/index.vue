@@ -72,7 +72,7 @@ export default {
 <style scoped>
 main {
   height: 100vh;
-  background: url('./images/bg.jpg') center no-repeat;
+  background: url('/images/bg.jpg') center no-repeat;
   background-size: 100% 100%;
 }
 
