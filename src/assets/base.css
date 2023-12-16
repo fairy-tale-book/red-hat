@@ -14,3 +14,18 @@ body {
   color: #111;
   background: var(--green);
 }
+
+
+.back-btn {
+  padding: 2rem;
+}
+
+header a {
+  display: flex;
+  width: 60px;
+  height: 60px;
+}
+
+header img {
+  width: 100%;
+}

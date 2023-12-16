@@ -8,17 +8,10 @@
 
     <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
       <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1166px, 0, 0)">
-        <!-- <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="7" style="width: 358.667px; margin-right: 30px;">Slide 8</div>
-        <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="8" style="width: 358.667px; margin-right: 30px;">
-        Slide 9</div>
-        <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="9" style="width: 358.667px; margin-right: 30px;">
-          Slide 10</div> -->
         <div class="swiper-slide" data-swiper-slide-index="4" style="width: 358.667px; margin-right: 30px">
           <router-link to="/main">
             <img src="../images/zs.png" alt="" />
           </router-link>
-          <!-- <a href="./main.html">
-          </a> -->
         </div>
         <div
           class="swiper-slide swiper-slide-prev"
@@ -34,30 +27,29 @@
           data-swiper-slide-index="1"
           style="width: 358.667px; margin-right: 30px"
         >
-          <a href="./main.html">
+          <router-link to="/main">
             <img src="../images/qr.png" alt="" />
-          </a>
+          </router-link>
         </div>
         <div
           class="swiper-slide swiper-slide-next"
           data-swiper-slide-index="2"
           style="width: 358.667px; margin-right: 30px"
         >
-          <a href="./main.html">
+          <router-link to="/main">
             <img src="../images/qxs.png" alt="" />
-          </a>
+          </router-link>
         </div>
         <div class="swiper-slide" data-swiper-slide-index="3" style="width: 358.667px; margin-right: 30px">
-          <a href="./main.html">
+          <router-link to="/main">
             <img src="../images/dxr.png" alt="" />
-          </a>
+          </router-link>
         </div>
         <div class="swiper-slide" data-swiper-slide-index="3" style="width: 358.667px; margin-right: 30px">
-          <a href="./main.html">
+          <router-link to="/main">
             <img src="../images/zcjg.png" alt="" />
-          </a>
+          </router-link>
         </div>
-        <!-- <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" style="width: 358.667px; margin-right: 30px;">Slide 1</div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="1" style="width: 358.667px; margin-right: 30px;">Slide 2</div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" style="width: 358.667px; margin-right: 30px;">Slide 3</div></div> -->
       </div>
     </div>
   </main>

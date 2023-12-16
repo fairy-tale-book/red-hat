@@ -196,22 +196,6 @@ export default {
 </script>
 
 <style scoped>
-.back-btn {
-  width: 4rem;
-  height: 4rem;
-  margin: 2rem;
-}
-
-header a {
-  display: flex;
-  width: 60px;
-  height: 60px;
-}
-
-header img {
-  width: 100%;
-}
-
 .score {
   position: relative;
   margin: 1rem;
@@ -260,13 +244,12 @@ header img {
   display: flex;
   justify-content: center;
   padding: 6px 10px;
-  margin: 35px 20px 40px;
+  margin: 15px 20px 40px;
   background-color: #86b250;
   transition: opacity 0.5s;
 }
 
 .draggable {
-  /* width: 5rem; */
   display: flex;
   align-items: center;
   justify-content: center;

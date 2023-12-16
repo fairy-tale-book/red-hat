@@ -1,5 +1,11 @@
 <template>
   <main key="33">
+    <header class="back-btn">
+      <a href="/">
+        <img src="../images/back.png" alt="" />
+      </a>
+    </header>
+
     <div v-if="loading" id="loading" class="loading">
       <h1 class="loading-text">故事生成中...</h1>
       <div class="loader">
@@ -33,22 +39,36 @@
 
     <div v-else class="my-story">
       <section>
+        <!-- <p>
+          {{ story }}
+        </p> -->
         <p>
-          总结一波我日常使用的AI工具： 1.
-          写文章用Claude模型（100k上下文一次可以输出一整篇文章），背后是poe.com（付费，一个月150左右） 2.
-          写代码用copilot（模型是gpt-3.5），虽然不够聪明，但能联系整个项目的workspace提供建议（付费，我的是微软送的） 3.
-          问问题用GPT-4，背后是poe.com 4. 查资料用https://www.perplexity.ai/
-          ，免费，他能全网搜索我需要的主题，并给出引用地址 5. 问编程相关问题除了GPT-4，还能用 https://devv.ai/
-          ，免费，针对编程问题有优化
+          奥特曼：小朋友们，今天我们要讲一个关于滑滑梯和下雨的故事。
+          有一天，小刚和小朋友们在公园里玩滑滑梯。突然，天空变得阴沉，开始下雨了。小刚和小朋友们都很兴奋，他们觉得雨中的滑滑梯一定很好玩。
+          但是，奥特曼告诉他们，下雨天滑滑梯很危险。因为雨水会让滑滑梯变得湿滑，容易摔倒。而且，如果雨下得很大，还可能造成地面湿滑，容易摔倒受伤。
+          所以，小朋友们在下雨天玩耍时，一定要注意安全。不要在滑滑梯、游乐场等湿滑的地方玩耍，以免摔倒受伤。
         </p>
-      </section>
 
-      <div class="phonation">
         <div class="item-1">
-          <img src="" alt="" />
+          <img src="../images/setting.png" alt="" />
         </div>
-      </div>
+
+        <div class="item-1">
+          <img src="../images/setting.png" alt="" />
+        </div>
+      </section>
     </div>
+
+    <div class="fix-setting-btn">
+      <img src="../images/setting.png" alt="" />
+    </div>
+
+    <img class="result" src="../images/result.png" alt="" />
+
+    <audio v-if="mp3url" controls>
+      <source :src="mp3url" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
   </main>
 </template>
 
@@ -57,18 +77,43 @@ export default {
   data() {
     return {
       loading: false,
+      story: '',
+      mp3url: '',
     };
   },
   mounted() {
-    this.loading = true;
-    const genUrl = 'https://api.thelittleredridinghood.com/story/';
+    this.getStory();
+    this.getMp3();
+  },
+  methods: {
+    getStory() {
+      this.loading = true;
+      const genUrl = 'https://api.thelittleredridinghood.com/story/';
+      const params = {
+        theme: '注意安全',
+        key_words: ['滑滑梯', '下雨'],
+      };
+      this.postData(genUrl, params)
+        .then((data) => {
+          this.loading = false;
+          this.story = data.story;
+        })
+        .catch((err) => {
+          this.loading = false;
+          console.log(err, 11);
+        });
+    },
+    getMp3() {
+      const params = {
+        story: 'abc',
+      };
 
-    const params = {
-      theme: '注意安全',
-      key_words: ['滑滑梯', '下雨'],
-    };
-
-    async function postData(url = '', data = {}) {
+      this.postData('https://api.thelittleredridinghood.com/sound-story', params).then((data) => {
+        console.log(data);
+        this.mp3url = data;
+      });
+    },
+    async postData(url = '', data = {}) {
       // Default options are marked with *
       const response = await fetch(url, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -84,41 +129,25 @@ export default {
         body: JSON.stringify(data), // body data type must match "Content-Type" header
       });
       return response.json(); // parses JSON response into native JavaScript objects
-    }
-
-    // const loadingEle = document.getElementById('loading');
-
-    postData(genUrl, params)
-      .then((data) => {
-        this.loading = true;
-        console.log(data); // JSON data parsed by `data.json()` call
-      })
-      .catch((err) => {
-        this.loading = true;
-        console.log(err, 11);
-        // loadingEle.style.display = 'none';
-      });
+    },
   },
 };
 </script>
 
 <style scoped lang="scss">
 main {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  position: relative;
 }
 .loading {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
 }
 
 .loading-text {
   position: absolute;
-  display: block;
-  width: 202px;
-  top: -100px;
-  left: -38px;
+  top: 232px;
   color: #fff;
   font-size: 30px;
 }
@@ -233,13 +262,36 @@ $animation-distance: 25px;
 }
 
 .my-story {
-  width: 34rem;
+  width: 95%;
   background-color: #dcf1c0;
   color: #87b250;
   padding: 15px 20px;
   border-radius: 10px;
+  margin: 20px;
+  position: fixed;
+  bottom: 50px;
+
   p {
-    font-size: 1rem;
+    font-size: 16px;
   }
+
+  section {
+    display: grid;
+    grid-template-columns: 1fr 100px 100px;
+  }
+}
+
+.fix-setting-btn {
+  width: 100px;
+  position: fixed;
+  right: 0;
+  top: 4px;
+}
+
+.result {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  height: 100%;
 }
 </style>
