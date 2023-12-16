@@ -44,34 +44,42 @@ export default {
         {
           iconName: 'ele1',
           img: 'ele1',
+          name: '毛毛虫',
         },
         {
           iconName: 'ele2',
           img: 'ele2',
+          name: '孔雀',
         },
         {
           iconName: 'ele3',
           img: 'ele3',
+          name: '小鸡',
         },
         {
           iconName: 'ele4',
           img: 'ele4',
+          name: '小狗',
         },
         {
           iconName: 'ele1',
           img: 'ele1-1',
+          name: '小鸟',
         },
         {
           iconName: 'ele4',
           img: 'ele4-3',
+          name: '长颈鹿',
         },
         {
           iconName: 'ele3',
           img: 'ele3-2',
+          name: '蝴蝶',
         },
         {
           iconName: 'ele2',
           img: 'ele2-1',
+          name: '小猪',
         },
       ],
       randomDraggableBrands: [],
@@ -150,10 +158,6 @@ export default {
       const isCorrectMatching = target[0].iconName === droppableElementBrand;
       this.total++;
 
-      // console.log(target[0], droppableElementBrand);
-
-      // console.log(draggableElementBrand, droppableElementBrand, target);
-
       if (isCorrectMatching) {
         const draggableElement = document.getElementById(draggableElementBrand);
 
@@ -166,7 +170,7 @@ export default {
         // console.log(draggableElement.getAttribute('data-img'), 22);
 
         event.target.innerHTML = `
-          <img src="/images/${target[0].img}.png" />
+          <img src="./images/${target[0].img}.png" />
         `;
         this.correct++;
 
