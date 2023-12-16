@@ -33,11 +33,9 @@
 
     <!-- 生成故事按钮 -->
     <div v-if="correct === 4" class="gen-story">
-      <router-link id="gen-story-btn" to="/genStory">
+      <router-link id="gen-story-btn" to="/gen">
         <img src="../images/gen-story.png" alt="" />
       </router-link>
-      <!-- <a id="gen-story-btn" href="./genStory.html">
-      </a> -->
     </div>
   </main>
 </template>
