@@ -9,9 +9,7 @@
     <!-- 元素 -->
     <section class="draggable-items">
       <div v-for="item in brands" :key="item.img">
-        {{ item.img }}
         <img :id="item.img" draggable class="draggable" :data-img="item.img" :src="`images/${item.img}.png`" />
-        <!-- <img :id="item.img" draggable class="draggable" :data-img="item.img" :src="getAssetsFile(`${item.img}.png`)" /> -->
       </div>
     </section>
 
