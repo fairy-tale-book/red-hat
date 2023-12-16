@@ -72,8 +72,10 @@ export default {
 <style scoped>
 main {
   height: 100vh;
-  background: url('/images/bg.jpg') center no-repeat;
-  background-size: 100% 100%;
+  background: url('/images/bg.png') center no-repeat;
+
+  /* background-size: 100% 100%; */
+  background-size: cover;
 }
 
 .swiper-container {
@@ -93,8 +95,8 @@ main {
 }
 
 .swiper-slide a {
-  width: 28rem;
-  margin-top: 21rem;
+  width: 25rem;
+  margin-top: 26rem;
   overflow: hidden;
 }
 

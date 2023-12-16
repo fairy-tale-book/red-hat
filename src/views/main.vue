@@ -21,7 +21,9 @@
           :key="idx"
           :class="`matching-pair pair-${idx} droppable`"
           :data-brand="brands[idx - 1].iconName"
-        ></div>
+        >
+          {{ brands[idx - 1].iconName }}
+        </div>
       </section>
     </div>
 
@@ -45,7 +47,7 @@ export default {
         },
         {
           iconName: 'ele2',
-          img: 'ele2-2',
+          img: 'ele2',
         },
         {
           iconName: 'ele3',
@@ -56,6 +58,10 @@ export default {
           img: 'ele4',
         },
         {
+          iconName: 'ele1',
+          img: 'ele1-1',
+        },
+        {
           iconName: 'ele4',
           img: 'ele4-3',
         },
@@ -64,8 +70,8 @@ export default {
           img: 'ele3-2',
         },
         {
-          iconName: 'ele3',
-          img: 'ele3-3',
+          iconName: 'ele2',
+          img: 'ele2-1',
         },
       ],
       randomDraggableBrands: [],
@@ -164,7 +170,7 @@ export default {
         `;
         this.correct++;
 
-        console.log('success', this.correct, this.total);
+        console.log('success!!!~~~~~~~~~', this.correct, this.total);
 
         // if (this.correct === this.totalMatchingPairs) {
         //   const genStoryELe = document.getElementById('gen-story-btn');
@@ -235,12 +241,23 @@ export default {
 }
 
 .draggable-items {
-  display: flex;
+  /* display: flex;
+  justify-content: center; */
+
+  display: grid;
+
+  /* grid-template-columns: repeat(auto-fill, 110px); */
+  grid-template-columns: repeat(8, 110px);
   justify-content: center;
   padding: 6px 10px;
   margin: 15px 20px 40px;
   background-color: #86b250;
   transition: opacity 0.5s;
+}
+
+.draggable-items > div {
+  display: flex;
+  justify-content: center;
 }
 
 .draggable {
