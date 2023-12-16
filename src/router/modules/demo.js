@@ -5,7 +5,7 @@ export default [
     component: () => import('@/views/index.vue'),
   },
   {
-    path: '/main',
+    path: '/main/:theme',
     name: 'main',
     component: () => import('@/views/main.vue'),
   },

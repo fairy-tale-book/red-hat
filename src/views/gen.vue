@@ -65,10 +65,18 @@
 
     <img class="result" src="/images/result.png" alt="" />
 
-    <audio v-if="mp3url" controls>
-      <source :src="mp3url" type="audio/mpeg" />
+    <audio v-if="mp3url" controls autoplay :src="mp3url">
+      <!-- <source :src="mp3url" type="audio/mpeg" /> -->
       Your browser does not support the audio element.
     </audio>
+
+    <audio
+      id="audio"
+      style="display: none"
+      data-src="
+    https://zd25bag5w2w3e2te.aistudio-hub.baidu.com/tmp/1702715064_e651ce99-36fb-4fe0-b206-d3fbe8ac5629.wav"
+      controls
+    ></audio>
   </main>
 </template>
 
@@ -110,7 +118,7 @@ export default {
 
       this.postData('https://api.thelittleredridinghood.com/sound-story', params).then((data) => {
         console.log(data);
-        this.mp3url = data;
+        this.mp3url = data.sound_story_url;
       });
     },
     async postData(url = '', data = {}) {
@@ -123,6 +131,10 @@ export default {
         headers: {
           'Content-Type': 'application/json',
           // 'Content-Type': 'application/x-www-form-urlencoded',
+          // Authorization: {
+          //   token: '63cd79b5c3155c29a8fb3398e2fda3237523cf0c',
+          // },
+          Authorization: '63cd79b5c3155c29a8fb3398e2fda3237523cf0c',
         },
         redirect: 'follow', // manual, *follow, error
         referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
@@ -148,7 +160,7 @@ main {
 .loading-text {
   position: absolute;
   top: 232px;
-  color: #fff;
+  // color: #fff;
   font-size: 30px;
 }
 .loading p {
@@ -293,5 +305,13 @@ $animation-distance: 25px;
   top: 0;
   z-index: -1;
   height: 100%;
+  width: 100%;
+}
+
+audio {
+  position: absolute;
+  left: 50%;
+  top: 200px;
+  margin-left: -150px;
 }
 </style>
