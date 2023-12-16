@@ -14,7 +14,7 @@
           data-swiper-slide-index="0"
           style="width: 358.667px; margin-right: 30px"
         >
-          <router-link to="/main">
+          <router-link to="/main/尊重他人">
             <img src="/images/zztr.png" alt="" />
           </router-link>
         </div>
@@ -23,7 +23,7 @@
           data-swiper-slide-index="1"
           style="width: 358.667px; margin-right: 30px"
         >
-          <router-link to="/main">
+          <router-link to="/main/学会谦让">
             <img src="/images/qr.png" alt="" />
           </router-link>
         </div>
@@ -32,17 +32,17 @@
           data-swiper-slide-index="2"
           style="width: 358.667px; margin-right: 30px"
         >
-          <router-link to="/main">
+          <router-link to="/main/爱干净勤洗手">
             <img src="/images/qxs.png" alt="" />
           </router-link>
         </div>
         <div class="swiper-slide" data-swiper-slide-index="3" style="width: 358.667px; margin-right: 30px">
-          <router-link to="/main">
+          <router-link to="/main/堆雪人">
             <img src="/images/dxr.png" alt="" />
           </router-link>
         </div>
         <div class="swiper-slide" data-swiper-slide-index="3" style="width: 358.667px; margin-right: 30px">
-          <router-link to="/main">
+          <router-link to="/main/知错就改">
             <img src="/images/zcjg.png" alt="" />
           </router-link>
         </div>
