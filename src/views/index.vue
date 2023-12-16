@@ -82,9 +82,6 @@ main {
 }
 
 .swiper-slide {
-  /* background: #fff; */
-
-  /* Center slide text vertically */
   display: flex;
   justify-content: center;
   font-size: 18px;

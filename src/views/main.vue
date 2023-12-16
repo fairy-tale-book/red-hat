@@ -10,7 +10,7 @@
     <section class="draggable-items">
       <div v-for="item in brands" :key="item.img">
         {{ item.img }}
-        <img :id="item.img" draggable class="draggable" :data-img="item.img" :src="`images/${item.img}.png`" />
+        <img :id="item.img" draggable class="draggable" :data-img="item.img" :src="`/images/${item.img}.png`" />
         <!-- <img :id="item.img" draggable class="draggable" :data-img="item.img" :src="getAssetsFile(`${item.img}.png`)" /> -->
       </div>
     </section>
@@ -30,7 +30,7 @@
     <!-- 生成故事按钮 -->
     <div v-if="correct === 4" class="gen-story">
       <router-link id="gen-story-btn" to="/gen">
-        <!-- <img src="images/gen-story.png" alt="" /> -->
+        <img src="/images/gen-story.png" alt="" />
       </router-link>
     </div>
   </main>
@@ -315,7 +315,7 @@ export default {
   left: 5px;
   width: 194px;
   height: 158px;
-  background: url('images/pair1.png') no-repeat;
+  background: url('/images/pair1.png') no-repeat;
   background-size: 100%;
 }
 
@@ -323,7 +323,7 @@ export default {
   right: 0;
   width: 160px;
   height: 200px;
-  background: url('images/pair2.png') no-repeat;
+  background: url('/images/pair2.png') no-repeat;
   background-size: 100%;
 }
 
@@ -332,7 +332,7 @@ export default {
   left: 5px;
   width: 160px;
   height: 100%;
-  background: url('images/pair3.png') no-repeat;
+  background: url('/images/pair3.png') no-repeat;
   background-size: 100%;
 }
 
@@ -341,7 +341,7 @@ export default {
   bottom: -32px;
   width: 197px;
   height: 200px;
-  background: url('images/pair4.png') no-repeat;
+  background: url('/images/pair4.png') no-repeat;
   background-size: 100%;
 }
 
