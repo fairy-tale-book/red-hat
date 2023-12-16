@@ -2,17 +2,16 @@
   <main key="2">
     <header class="back-btn">
       <a href="/">
-        <img src="../images/back.png" alt="" />
+        <img src="images/back.png" alt="" />
       </a>
     </header>
 
     <!-- 元素 -->
     <section class="draggable-items">
       <div v-for="item in brands" :key="item.img">
-        <!-- <img :id="item.img" draggable class="draggable" :data-img="item.img" :src="`./../src/images/${item.img}.png`" /> -->
-        <img :id="item.img" draggable class="draggable" :data-img="item.img" :src="getAssetsFile(`${item.img}.png`)" />
-
-        <!-- {{ item.img }} -->
+        {{ item.img }}
+        <img :id="item.img" draggable class="draggable" :data-img="item.img" :src="`images/${item.img}.png`" />
+        <!-- <img :id="item.img" draggable class="draggable" :data-img="item.img" :src="getAssetsFile(`${item.img}.png`)" /> -->
       </div>
     </section>
 
@@ -24,17 +23,14 @@
           :key="idx"
           :class="`matching-pair pair-${idx} droppable`"
           :data-brand="brands[idx - 1].iconName"
-        >
-          <!-- {{ brands[idx - 1].iconName }} -->
-          <!-- <img src="../src/images/${target[0].img}.png" /> -->
-        </div>
+        ></div>
       </section>
     </div>
 
     <!-- 生成故事按钮 -->
     <div v-if="correct === 4" class="gen-story">
       <router-link id="gen-story-btn" to="/gen">
-        <img src="../images/gen-story.png" alt="" />
+        <img src="images/gen-story.png" alt="" />
       </router-link>
     </div>
   </main>
@@ -85,9 +81,9 @@ export default {
     this.initiateGame();
   },
   methods: {
-    getAssetsFile(url) {
-      return new URL(`../images/${url}`, import.meta.url).href;
-    },
+    // getAssetsFile(url) {
+    //   return new URL(`./images/${url}`, import.meta.url).href;
+    // },
     initiateGame() {
       this.randomDraggableBrands = this.generateRandomItemsArray(this.totalDraggableItems, this.brands);
 
@@ -166,7 +162,7 @@ export default {
         // console.log(draggableElement.getAttribute('data-img'), 22);
 
         event.target.innerHTML = `
-          <img src="./src/images/${target[0].img}.png" />
+          <img src="images/${target[0].img}.png" />
         `;
         this.correct++;
 
@@ -319,7 +315,7 @@ export default {
   left: 5px;
   width: 194px;
   height: 158px;
-  background: url('../images/pair1.png') no-repeat;
+  background: url('images/pair1.png') no-repeat;
   background-size: 100%;
 }
 
@@ -327,7 +323,7 @@ export default {
   right: 0;
   width: 160px;
   height: 200px;
-  background: url('../images/pair2.png') no-repeat;
+  background: url('images/pair2.png') no-repeat;
   background-size: 100%;
 }
 
@@ -336,7 +332,7 @@ export default {
   left: 5px;
   width: 160px;
   height: 100%;
-  background: url('../images/pair3.png') no-repeat;
+  background: url('images/pair3.png') no-repeat;
   background-size: 100%;
 }
 
@@ -345,7 +341,7 @@ export default {
   bottom: -32px;
   width: 197px;
   height: 200px;
-  background: url('../images/pair4.png') no-repeat;
+  background: url('images/pair4.png') no-repeat;
   background-size: 100%;
 }
 

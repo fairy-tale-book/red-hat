@@ -1,16 +1,12 @@
 <template>
   <main key="3">
-    <header>
-      <p>选主题!!</p>
-    </header>
-
     <!-- 布局参考：https://www.swiper.com.cn/demo/slides-scale.html -->
 
     <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
       <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1166px, 0, 0)">
         <div class="swiper-slide" data-swiper-slide-index="4" style="width: 358.667px; margin-right: 30px">
           <router-link to="/main">
-            <img src="../images/zs.png" alt="" />
+            <img src="images/zs.png" alt="" />
           </router-link>
         </div>
         <div
@@ -19,7 +15,7 @@
           style="width: 358.667px; margin-right: 30px"
         >
           <router-link to="/main">
-            <img src="../images/zztr.png" alt="" />
+            <img src="images/zztr.png" alt="" />
           </router-link>
         </div>
         <div
@@ -28,7 +24,7 @@
           style="width: 358.667px; margin-right: 30px"
         >
           <router-link to="/main">
-            <img src="../images/qr.png" alt="" />
+            <img src="images/qr.png" alt="" />
           </router-link>
         </div>
         <div
@@ -37,17 +33,17 @@
           style="width: 358.667px; margin-right: 30px"
         >
           <router-link to="/main">
-            <img src="../images/qxs.png" alt="" />
+            <img src="images/qxs.png" alt="" />
           </router-link>
         </div>
         <div class="swiper-slide" data-swiper-slide-index="3" style="width: 358.667px; margin-right: 30px">
           <router-link to="/main">
-            <img src="../images/dxr.png" alt="" />
+            <img src="images/dxr.png" alt="" />
           </router-link>
         </div>
         <div class="swiper-slide" data-swiper-slide-index="3" style="width: 358.667px; margin-right: 30px">
           <router-link to="/main">
-            <img src="../images/zcjg.png" alt="" />
+            <img src="images/zcjg.png" alt="" />
           </router-link>
         </div>
       </div>
@@ -76,7 +72,8 @@ export default {
 <style scoped>
 main {
   height: 100vh;
-  background: var(--green);
+  background: url('./images/bg.jpg') center no-repeat;
+  background-size: 100% 100%;
 }
 
 .swiper-container {
