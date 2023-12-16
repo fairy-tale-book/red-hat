@@ -12,7 +12,7 @@
         <!-- <img :id="item.img" draggable class="draggable" :data-img="item.img" :src="`./../src/images/${item.img}.png`" /> -->
         <img :id="item.img" draggable class="draggable" :data-img="item.img" :src="getAssetsFile(`${item.img}.png`)" />
 
-        {{ item.img }}
+        <!-- {{ item.img }} -->
       </div>
     </section>
 
@@ -25,7 +25,7 @@
           :class="`matching-pair pair-${idx} droppable`"
           :data-brand="brands[idx - 1].iconName"
         >
-          {{ brands[idx - 1].iconName }}
+          <!-- {{ brands[idx - 1].iconName }} -->
           <!-- <img src="../src/images/${target[0].img}.png" /> -->
         </div>
       </section>
@@ -51,7 +51,7 @@ export default {
         },
         {
           iconName: 'ele2',
-          img: 'ele2',
+          img: 'ele2-2',
         },
         {
           iconName: 'ele3',
@@ -62,16 +62,16 @@ export default {
           img: 'ele4',
         },
         {
-          iconName: 'ele5',
-          img: 'ele5',
+          iconName: 'ele4',
+          img: 'ele4-3',
         },
         {
-          iconName: 'ele6',
-          img: 'ele6',
+          iconName: 'ele3',
+          img: 'ele3-2',
         },
         {
-          iconName: 'ele1',
-          img: 'elee',
+          iconName: 'ele3',
+          img: 'ele3-3',
         },
       ],
       randomDraggableBrands: [],
@@ -253,7 +253,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px;
+  height: 90px;
   margin: 0 0.5rem;
   font-size: 4rem;
   font-weight: bold;
