@@ -1,6 +1,6 @@
 <template>
   <main key="33">
-    <div id="loading" class="loading">
+    <div v-if="loading" id="loading" class="loading">
       <h1 class="loading-text">故事生成中...</h1>
       <div class="loader">
         <div class="dot"></div>
@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div class="my-story">
+    <div v-else class="my-story">
       <section>
         <p>
           总结一波我日常使用的AI工具： 1.
@@ -54,7 +54,13 @@
 
 <script>
 export default {
+  data() {
+    return {
+      loading: false,
+    };
+  },
   mounted() {
+    this.loading = true;
     const genUrl = 'https://api.thelittleredridinghood.com/story/';
 
     const params = {
@@ -80,15 +86,17 @@ export default {
       return response.json(); // parses JSON response into native JavaScript objects
     }
 
-    const loadingEle = document.getElementById('loading');
+    // const loadingEle = document.getElementById('loading');
 
     postData(genUrl, params)
       .then((data) => {
+        this.loading = true;
         console.log(data); // JSON data parsed by `data.json()` call
       })
       .catch((err) => {
+        this.loading = true;
         console.log(err, 11);
-        loadingEle.style.display = 'none';
+        // loadingEle.style.display = 'none';
       });
   },
 };
