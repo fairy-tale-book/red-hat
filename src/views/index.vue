@@ -1,7 +1,7 @@
 <template>
   <main key="3">
     <header>
-      <p>选主题</p>
+      <p>选主题！</p>
     </header>
 
     <!-- 布局参考：https://www.swiper.com.cn/demo/slides-scale.html -->
