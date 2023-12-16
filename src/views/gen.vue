@@ -94,6 +94,7 @@ export default {
       const params = {
         theme: this.$route.params.theme,
         key_words: this.$route.query.keywords,
+        story_teller: this.$route.query.storyTeller,
       };
       this.postData(genUrl, params)
         .then((data) => {

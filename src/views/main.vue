@@ -28,10 +28,27 @@
     </div>
 
     <!-- 生成故事按钮 -->
-    <div v-if="correct === 4" class="gen-story">
-      <a id="gen-story-btn" @click="goResult">
+    <div v-show="correct === 4" class="gen-story">
+      <a id="myBtn">
         <img src="/images/gen-story.png" alt="" />
       </a>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>选你喜欢的角色</h1>
+        <div class="favorite-role">
+          <div class="role" @click="goResult('奥特曼')">
+            <img src="/images/atm.png" alt="" />
+          </div>
+          <div class="role" @click="goResult('冰雪奇缘艾莎公主')">
+            <img src="/images/elsa.png" alt="" />
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </template>
@@ -92,13 +109,40 @@ export default {
   },
   mounted() {
     this.initiateGame();
+
+    // Get the modal
+    const modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    const btn = document.getElementById('myBtn');
+
+    // Get the <span> element that closes the modal
+    const span = document.getElementsByClassName('close')[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function () {
+      modal.style.display = 'block';
+    };
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = 'none';
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
   },
   methods: {
-    goResult() {
+    goResult(storyTeller) {
       this.$router.push({
         path: `/gen/${this.$route.params.theme}`,
         query: {
           keywords: this.keywords,
+          storyTeller,
         },
       });
     },
@@ -207,228 +251,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.score {
-  position: relative;
-  margin: 1rem;
-  font-family: monospace;
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  letter-spacing: 0.25rem;
-  transition: opacity 0.2s;
-}
-
-#play-again-btn {
-  position: absolute;
-  top: -0.5rem;
-  left: 50%;
-  display: none;
-  padding: 8px 10px;
-  margin-left: -50px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  background-color: #111;
-  border: 5px double #fff;
-  border-radius: 14px;
-  outline: none;
-  opacity: 0;
-  transition: opacity 0.5s, transform 0.5s, background-color 0.2s;
-}
-
-#play-again-btn:hover {
-  background-color: #333;
-}
-
-#play-again-btn:active {
-  background-color: #555;
-}
-
-#play-again-btn.play-again-btn-entrance {
-  opacity: 1;
-  transform: translateX(6rem);
-}
-
-.draggable-items {
-  /* display: flex;
-  justify-content: center; */
-
-  display: grid;
-
-  /* grid-template-columns: repeat(auto-fill, 110px); */
-  grid-template-columns: repeat(8, 110px);
-  justify-content: center;
-  padding: 6px 10px;
-  margin: 15px 20px 40px;
-  overflow-x: auto;
-  background-color: #86b250;
-  transition: opacity 0.5s;
-}
-
-.draggable-items > div {
-  display: flex;
-  justify-content: center;
-}
-
-.draggable {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 90px;
-  margin: 0 0.5rem;
-  font-size: 4rem;
-  font-weight: bold;
-  cursor: move;
-  transition: opacity 0.2s;
-}
-
-.draggable:hover {
-  opacity: 0.5;
-}
-
-.matching-pairs {
-  position: relative;
-  display: grid;
-  grid-template-areas: 'a a';
-  justify-content: center;
-  width: 320px;
-  height: 320px;
-  transition: opacity 0.5s;
-}
-
-.matching-pairs-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.matching-pair {
-  position: absolute;
-
-  /* height: 10rem;
-  width: 10rem; */
-
-  /* display: flex;
-  justify-content: space-between;
-  border: 2px solid var(--green); */
-
-  width: 320px;
-  height: 320px;
-}
-
-.matching-pair img {
-  width: 100%;
-}
-
-.matching-pair span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  text-align: center;
-  user-select: none;
-}
-
-.pair-1 img,
-.pair-4 img {
-  width: auto;
-  height: 100%;
-}
-
-.pair-1 {
-  top: 0;
-  left: 5px;
-  width: 194px;
-  height: 158px;
-  background: url('/images/pair1.png') no-repeat;
-  background-size: 100%;
-}
-
-.pair-2 {
-  right: 0;
-  width: 160px;
-  height: 200px;
-  background: url('/images/pair2.png') no-repeat;
-  background-size: 100%;
-}
-
-.pair-3 {
-  bottom: -115px;
-  left: 5px;
-  width: 160px;
-  height: 100%;
-  background: url('/images/pair3.png') no-repeat;
-  background-size: 100%;
-}
-
-.pair-4 {
-  right: 0;
-  bottom: -32px;
-  width: 197px;
-  height: 200px;
-  background: url('/images/pair4.png') no-repeat;
-  background-size: 100%;
-}
-
-.label {
-  width: 15rem;
-}
-
-.droppable {
-  transition: 0.2s;
-}
-
-.droppable-hover {
-  z-index: 999;
-
-  /* background-color: #bee3f0; */
-  transform: scale(1.1);
-}
-
-.dragged {
-  cursor: default;
-  user-select: none;
-  opacity: 0.1;
-}
-
-.draggable.dragged:hover {
-  opacity: 0.1;
-}
-
-@media (width <= 600px) {
-  html {
-    font-size: 14px;
-  }
-
-  #play-again-btn {
-    top: -0.4rem;
-  }
-
-  #play-again-btn.play-again-btn-entrance {
-    transform: translateX(7rem);
-  }
-}
-
-.gen-story {
-  position: fixed;
-  right: 3rem;
-  bottom: 3rem;
-}
-
-.gen-story a {
-  display: flex;
-  width: 8rem;
-  height: 8rem;
-
-  /* overflow: hidden; */
-
-  /* cursor: not-allowed; */
-
-  /* opacity: 0; */
-
-  /* transform: scale(.8); */
-}
-</style>
+<style scoped src="./main.less"></style>
