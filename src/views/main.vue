@@ -2,7 +2,7 @@
   <main key="2">
     <header class="back-btn">
       <a href="/">
-        <img src="images/back.png" alt="" />
+        <img src="/images/back.png" alt="" />
       </a>
     </header>
 
@@ -30,7 +30,7 @@
     <!-- 生成故事按钮 -->
     <div v-if="correct === 4" class="gen-story">
       <router-link id="gen-story-btn" to="/gen">
-        <img src="images/gen-story.png" alt="" />
+        <!-- <img src="images/gen-story.png" alt="" /> -->
       </router-link>
     </div>
   </main>
@@ -162,7 +162,7 @@ export default {
         // console.log(draggableElement.getAttribute('data-img'), 22);
 
         event.target.innerHTML = `
-          <img src="images/${target[0].img}.png" />
+          <img src="/images/${target[0].img}.png" />
         `;
         this.correct++;
 

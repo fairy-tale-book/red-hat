@@ -2,7 +2,7 @@
   <main key="33">
     <header class="back-btn">
       <a href="/">
-        <img src="../images/back.png" alt="" />
+        <img src="/images/back.png" alt="" />
       </a>
     </header>
 
@@ -50,20 +50,20 @@
         </p>
 
         <div class="item-1">
-          <img src="../images/setting.png" alt="" />
+          <img src="/images/setting.png" alt="" />
         </div>
 
         <div class="item-1">
-          <img src="../images/setting.png" alt="" />
+          <img src="/images/setting.png" alt="" />
         </div>
       </section>
     </div>
 
     <div class="fix-setting-btn">
-      <img src="../images/setting.png" alt="" />
+      <img src="/images/setting.png" alt="" />
     </div>
 
-    <img class="result" src="../images/result.png" alt="" />
+    <img class="result" src="/images/result.png" alt="" />
 
     <audio v-if="mp3url" controls>
       <source :src="mp3url" type="audio/mpeg" />
