@@ -43,13 +43,13 @@
           {{ story }}
         </p>
 
-        <div class="item-1">
+        <!-- <div class="item-1">
           <img src="/images/setting.png" alt="" />
         </div>
 
         <div class="item-1">
           <img src="/images/setting.png" alt="" />
-        </div>
+        </div> -->
       </section>
     </div>
 

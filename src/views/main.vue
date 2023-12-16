@@ -22,7 +22,7 @@
           :class="`matching-pair pair-${idx} droppable`"
           :data-brand="brands[idx - 1].iconName"
         >
-          {{ brands[idx - 1].iconName }}
+          <!-- {{ brands[idx - 1].iconName }} -->
         </div>
       </section>
     </div>
@@ -79,11 +79,6 @@ export default {
           name: '小狗',
         },
         {
-          iconName: 'ele1',
-          img: 'ele1-1',
-          name: '小鸟',
-        },
-        {
           iconName: 'ele4',
           img: 'ele4-3',
           name: '长颈鹿',
@@ -92,6 +87,11 @@ export default {
           iconName: 'ele3',
           img: 'ele3-2',
           name: '蝴蝶',
+        },
+        {
+          iconName: 'ele1',
+          img: 'ele1-1',
+          name: '小鸟',
         },
         {
           iconName: 'ele2',
