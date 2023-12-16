@@ -44,7 +44,7 @@
           <div class="role" @click="goResult('奥特曼')">
             <img src="/images/atm.png" alt="" />
           </div>
-          <div class="role" @click="goResult('冰雪奇缘艾莎公主')">
+          <div class="role" @click="goResult('艾莎')">
             <img src="/images/elsa.png" alt="" />
           </div>
         </div>

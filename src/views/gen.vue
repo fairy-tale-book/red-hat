@@ -82,6 +82,7 @@ export default {
       mp3Loading: false,
       story: '',
       mp3url: '',
+      // errorText: '',
     };
   },
   mounted() {
