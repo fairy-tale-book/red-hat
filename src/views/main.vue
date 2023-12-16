@@ -41,7 +41,7 @@
         <span class="close">&times;</span>
         <h1>选你喜欢的角色</h1>
         <div class="favorite-role">
-          <div class="role" @click="goResult('奥特曼')">
+          <div class="role" @click="goResult('迪迦奥特曼')">
             <img src="/images/atm.png" alt="" />
           </div>
           <div class="role" @click="goResult('艾莎')">
