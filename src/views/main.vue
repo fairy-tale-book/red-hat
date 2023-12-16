@@ -29,9 +29,9 @@
 
     <!-- 生成故事按钮 -->
     <div v-if="correct === 4" class="gen-story">
-      <router-link id="gen-story-btn" to="/gen">
+      <a id="gen-story-btn" @click="goResult">
         <img src="/images/gen-story.png" alt="" />
-      </router-link>
+      </a>
     </div>
   </main>
 </template>
@@ -87,15 +87,21 @@ export default {
       totalMatchingPairs: 4,
       correct: 0,
       total: 0,
+      keywords: [],
     };
   },
   mounted() {
     this.initiateGame();
   },
   methods: {
-    // getAssetsFile(url) {
-    //   return new URL(`./images/${url}`, import.meta.url).href;
-    // },
+    goResult() {
+      this.$router.push({
+        path: `/gen/${this.$route.params.theme}`,
+        query: {
+          keywords: this.keywords,
+        },
+      });
+    },
     initiateGame() {
       this.randomDraggableBrands = this.generateRandomItemsArray(this.totalDraggableItems, this.brands);
 
@@ -174,7 +180,9 @@ export default {
         `;
         this.correct++;
 
-        console.log('success!!!~~~~~~~~~', this.correct, this.total);
+        this.keywords.push(target[0].name);
+
+        console.log('success!!!~~~~~~~~~', this.keywords, this.correct, this.total);
 
         // if (this.correct === this.totalMatchingPairs) {
         //   const genStoryELe = document.getElementById('gen-story-btn');
@@ -255,6 +263,7 @@ export default {
   justify-content: center;
   padding: 6px 10px;
   margin: 15px 20px 40px;
+  overflow-x: auto;
   background-color: #86b250;
   transition: opacity 0.5s;
 }

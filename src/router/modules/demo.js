@@ -10,7 +10,7 @@ export default [
     component: () => import('@/views/main.vue'),
   },
   {
-    path: '/gen',
+    path: '/gen/:theme',
     name: 'gen',
     component: () => import('@/views/gen.vue'),
   },

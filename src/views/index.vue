@@ -5,7 +5,7 @@
     <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
       <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1166px, 0, 0)">
         <div class="swiper-slide" data-swiper-slide-index="4" style="width: 358.667px; margin-right: 30px">
-          <router-link to="/main">
+          <router-link to="/main/早睡觉身体好">
             <img src="/images/zs.png" alt="" />
           </router-link>
         </div>

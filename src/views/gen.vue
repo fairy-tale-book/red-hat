@@ -1,7 +1,7 @@
 <template>
   <main key="33">
     <header class="back-btn">
-      <a href="/">
+      <a href="javascript:history.back(-1)">
         <img src="/images/back.png" alt="" />
       </a>
     </header>
@@ -91,30 +91,29 @@ export default {
   },
   mounted() {
     this.getStory();
-    this.getMp3();
   },
   methods: {
     getStory() {
       this.loading = true;
       const genUrl = 'https://api.thelittleredridinghood.com/story/';
       const params = {
-        theme: '注意安全',
-        key_words: ['滑滑梯', '下雨'],
+        theme: this.$route.params.theme,
+        key_words: this.$route.query.keywords,
       };
       this.postData(genUrl, params)
         .then((data) => {
           this.loading = false;
           this.story = data.story;
+
+          this.getMp3(data.story);
         })
         .catch((err) => {
           this.loading = false;
           console.log(err, 11);
         });
     },
-    getMp3() {
-      const params = {
-        story: 'abc',
-      };
+    getMp3(story) {
+      const params = { story };
 
       this.postData('https://api.thelittleredridinghood.com/sound-story', params).then((data) => {
         console.log(data);
@@ -285,6 +284,7 @@ $animation-distance: 25px;
 
   p {
     font-size: 16px;
+    line-height: 24px;
   }
 
   section {
