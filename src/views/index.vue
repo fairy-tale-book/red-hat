@@ -25,9 +25,9 @@
           data-swiper-slide-index="0"
           style="width: 358.667px; margin-right: 30px"
         >
-          <a href="./main.html">
+          <router-link to="/main">
             <img src="../images/zztr.png" alt="" />
-          </a>
+          </router-link>
         </div>
         <div
           class="swiper-slide swiper-slide-active"
