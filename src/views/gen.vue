@@ -120,6 +120,7 @@ main {
   top: -100px;
   left: -38px;
   color: #fff;
+  font-size: 30px;
 }
 .loading p {
   text-align: center;

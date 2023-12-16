@@ -166,7 +166,7 @@ export default {
         // console.log(draggableElement.getAttribute('data-img'), 22);
 
         event.target.innerHTML = `
-          <img src="../src/images/${target[0].img}.png" />
+          <img src="./src/images/${target[0].img}.png" />
         `;
         this.correct++;
 
